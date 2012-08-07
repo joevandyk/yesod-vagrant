@@ -52,7 +52,6 @@ file "/etc/profile.d/cabal_path.sh" do
   content "export PATH=~/.cabal/bin:$PATH"
 end
 
-
 log "Cleaning up..."
 directory dir do
   action :delete
