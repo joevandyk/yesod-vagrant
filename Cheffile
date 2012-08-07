@@ -1,0 +1,13 @@
+site "http://community.opscode.com/api/v1"
+
+%w( heroku-toolbelt bash-vim hostname ).each do |n|
+  cookbook n, :git => "https://github.com/joevandyk/chef-cookbooks", :path => n
+end
+
+%w( fixie haskell-platform ).each do |n|
+  cookbook n, :path => "../chef-cookbooks/#{n}"
+end
+
+%w( yesod ).each do |n|
+  cookbook n, :path => "custom_cookbooks/#{n}"
+end
